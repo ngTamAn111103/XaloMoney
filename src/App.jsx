@@ -1,15 +1,25 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import ReactDOM from "react-dom/client";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 
+import SignUp from "./pages/signUp";
+import Login from "./pages/login";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <button class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-      ...
-    </button>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} /> {/* Route cho trang Login */}
+          <Route path="/signup" element={<SignUp />} /> {/* Route cho trang SignUp */}
+        </Routes>
+      </Router>
+    </>
   );
 }
 
